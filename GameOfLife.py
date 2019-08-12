@@ -64,6 +64,8 @@ for row in range(rows):
 
 newgraph = copy.deepcopy(graph);
 
+print("GENERATION 0:" + ":")
+printGraph(newgraph)
 for count in range(generations):
     for row in range(rows):
         for column in range(columns):
@@ -77,7 +79,7 @@ for count in range(generations):
             elif(numberOfNeighbours(row, column, graph) > 3) and graph[row][column] == 1:
                 #Dies of overpopulation
                 newgraph[row][column] = 0;
-    print("GENERATION " + str(count) + ":")
+    print("GENERATION " + str(count + 1) + ":")
     printGraph(newgraph)
 
     graph = copy.deepcopy(newgraph);
